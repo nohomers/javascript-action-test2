@@ -10,6 +10,10 @@ try {
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
+  // dump the github context
+  console.log(`Dumping the github context:`);
+  const github_context = JSON.stringify(github.context, undefined, 2)
+  console.log(`${github_context}`);
 } catch (error) {
   core.setFailed(error.message);
 }
